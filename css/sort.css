@@ -1,0 +1,82 @@
+@import "base.css";
+html,
+body,
+.view_sort,
+.sort_content {
+  width: 100%;
+  height: 100%;
+}
+/*顶部导航*/
+.view_sort {
+  padding-top: 45px;
+}
+.view_sort .sort_top {
+  width: 100%;
+  background-color: #fff;
+  height: 45px;
+  padding: 4px 60px;
+  position: fixed;
+  top: 0;
+}
+.view_sort .sort_top a {
+  width: 45px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.view_sort .sort_top a:first-child {
+  left: 0;
+}
+.view_sort .sort_top a:last-child {
+  right: 0;
+}
+.view_sort .sort_top input {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  overflow: hidden;
+  padding-left: 5px;
+}
+/*内容部分*/
+.sort_content {
+  padding-left: 80px;
+  position: relative;
+}
+.sort_content .left_box {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 80px;
+  text-align: center;
+}
+.sort_content .left_box ul {
+  height: 100%;
+  overflow: hidden;
+}
+.sort_content .left_box ul li {
+  float: left;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  background-color: aqua;
+}
+.sort_content .right_box {
+  width: 100%;
+}
+.sort_content .right_box .container {
+  width: 100%;
+}
+.sort_content .right_box .container > img {
+  width: 100%;
+}
+.sort_content .right_box .container > h2 {
+  width: 100%;
+}
+.sort_content .right_box .container > ul {
+  width: 100%;
+}
+.sort_content .right_box .container > ul li {
+  float: left;
+  width: 33.33%;
+}

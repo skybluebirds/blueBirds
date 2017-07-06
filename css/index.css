@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input {
+  outline: none;
+  border: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  /*给移动端设置点击高亮*/
+  -webkit-tap-highlight-color: transparent;
+}
+img {
+  display: block;
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+/*封装函数*/
+/*京东红色字体*/
+.view {
+  width: 100%;
+  height: 100%;
+}
+/* 顶部搜索 */
+header {
+  width: 100%;
+  height: 40px;
+  background-color: rgba(201, 21, 35, 0);
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  padding: 5px 60px 5px 70px;
+}
+header .left {
+  background-image: url("../images/jd-sprites.png");
+  background-size: 200px;
+  background-position: 0 -110px;
+  width: 70px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background-clip:裁切背景图片,裁切以外的部分,content-box为切除内容以外的部分,显示内容,padding-box为切除padding以外的部分,border-box为切除border以外的部分*/
+  background-clip: content-box;
+  /*background-origin:原点对齐方式,content-box为以内容左上角对齐,padding-box为以padding的左上角对齐,border-box为以边框左上角对齐*/
+  background-origin: content-box;
+  padding: 10px 6px;
+}
+header .search {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+header .search input {
+  padding-left: 30px;
+}
+header .search::after {
+  background-image: url("../images/jd-sprites.png");
+  background-size: 200px;
+  background-position: -60px -110px;
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 6px;
+  left: 10px;
+}
+header .right {
+  width: 60px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+/* 轮播图 */
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+.carousel .carsousel_ul {
+  width: 1000%;
+}
+.carousel .carsousel_ul li {
+  float: left;
+  width: 10%;
+}
+.carousel .carsousel_index {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.carousel .carsousel_index li {
+  float: left;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  margin-left: 10px;
+}
+.carousel .carsousel_index .action {
+  background-color: #fff;
+}
+/*导航*/
+.top-nav ul li {
+  float: left;
+  width: 25%;
+  font-size: 14px;
+  text-align: center;
+}
+.top-nav ul li a {
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+}
+.top-nav ul li a img {
+  width: 60%;
+  margin: 0 auto ;
+}
+/*划线*/
+.line {
+  height: 10px;
+  background-color: #f5f5f5;
+}
+/*掌上秒杀*/
+.hand_kill .kill_title {
+  width: 100%;
+  position: relative;
+}
+.hand_kill .kill_title .kill_clock {
+  background-image: url("../images/jd-sprites.png");
+  background-size: 200px;
+  background-position: -85px -110px;
+  display: inline-block;
+  width: 18px;
+  height: 22px;
+  margin-left: 10px;
+}
+.hand_kill .kill_title > span {
+  color: #c91523;
+  display: inline-block;
+  vertical-align: middle;
+}
+.hand_kill .kill_title .time {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  font-weight: bold;
+  transform: translateX(-50%);
+}
+.hand_kill .kill_title .time span {
+  float: left;
+  background-color: #3d3d3d;
+  color: #fff;
+  padding: 1px 2px;
+  margin-left: 2px;
+}
+.hand_kill .kill_title .time > span:nth-child(3n) {
+  background-color: inherit;
+  color: #3d3d3d;
+}
+.hand_kill .kill_title .more {
+  display: inline-block;
+  float: right;
+}
+.hand_kill .kill_content ul li {
+  float: left;
+  width: 33.33%;
+  position: relative;
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+}
+.hand_kill .kill_content ul li a {
+  padding: 5px;
+}
+.hand_kill .kill_content ul li a img {
+  margin: 0 auto;
+}
+.hand_kill .kill_content ul li a .hot_word {
+  padding: 5px 10px;
+  background-color: orange;
+  color: #fff;
+  font-weight: 900;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 40px;
+  right: 10px;
+}
+.hand_kill .kill_content ul li a p {
+  color: #c91523;
+}
+/*618节日*/
+.festival .fs_title {
+  position: relative;
+}
+.festival .fs_title > ul {
+  position: absolute;
+  bottom: 5px;
+}
+.festival .fs_title > ul li {
+  float: left;
+  width: 50%;
+  padding: 0px 3px;
+}
+.festival .fs_content > ul li {
+  float: left;
+  width: 50%;
+}
+.festival .fs_content > ul > li:nth-of-type(-n+3) {
+  width: 33.33%;
+}
+/*广告*/
+.advert {
+  padding: 5px;
+}
+/*特色超市*/
+.market > h4 {
+  padding: 3px 5px;
+  color: #c91523;
+}
+.market ul li {
+  float: left;
+  width: 50%;
+}
+.market ul > li:nth-of-type(4) {
+  /*bug 切换不同大小的模板时会出现错位问题,解决办法是给对应的li表情设置一个清除浮动的设置*/
+  clear: both;
+}
+/*主题街*/
+.theme > h4 {
+  padding: 3px 5px;
+  color: #c91523;
+}
+.theme .theme_content ul li {
+  float: left;
+  width: 25%;
+}
+.theme .theme_content ul > li:nth-of-type(-n+2) {
+  width: 50%;
+}
+.theme .theme_content ul > li:nth-child(5) {
+  clear: both;
+}
+/*品牌推荐*/
+.recommond > h4 {
+  padding: 3px 5px;
+  color: #c91523;
+}
+.recommond .rec_content ul li {
+  float: left;
+  width: 30%;
+}
+.recommond .rec_content ul > li:first-child {
+  width: 40%;
+}
+/*猜你喜欢*/
+.guess .guess_title {
+  position: relative;
+}
+.guess .guess_title > h4 {
+  padding: 3px 5px;
+  color: #c91523;
+}
+.guess .guess_title .guess_more {
+  font-size: 14px;
+  position: absolute;
+  top: 2px;
+  right: 5px;
+}
+.guess .guess_title .guess_more > img {
+  display: inline-block;
+  width: 18px;
+  vertical-align: top;
+}
+.guess .guess_title .guess_more > a {
+  display: inline-block;
+  color: #c91523;
+}
+.guess .guess_content ul li {
+  float: left;
+  width: 50%;
+  color: #666;
+  padding: 5px;
+  font-size: 14px;
+}
+.guess .guess_content ul li .price > span {
+  color: #c91523;
+}
+.guess .guess_content ul li .price > a {
+  display: inline-block;
+  border: 1px solid #666;
+  float: right;
+}
+.guess .guess_content ul li > a {
+  padding: 0 5px;
+}
+.guess .guess_content ul li > a img {
+  width: 80%;
+  margin: 0 auto;
+}
+.guess .guess_content ul li > a > p {
+  overflow: hidden;
+  height: 34px;
+  border-bottom: 1px solid #666;
+}
+/*尾部工具栏*/
+.footer_tools {
+  background-color: #f3f5f7;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  padding-bottom: 44px;
+}
+.footer_tools > div {
+  border-top: 1px solid #d6d6d6;
+}
+.footer_tools .footer_more > a {
+  padding: 10px 0;
+}
+.footer_tools .footer_director ul li {
+  float: left;
+  width: 25%;
+  padding: 6px 0 ;
+}
+.footer_tools .footer_director ul li > a {
+  padding: 6px 0;
+  border-right: 1px solid #d6d6d6;
+}
+.footer_tools .downland ul li {
+  float: left;
+  width: 33.33%;
+  padding: 10px 0;
+}
+.footer_tools .downland ul li span {
+  background-image: url("../images/jd-sprites.png");
+  background-size: 200px;
+  background-position: -120px -70px;
+  display: block;
+  width: 33px;
+  height: 33px;
+  margin: 0 auto;
+}
+.footer_tools .downland ul li:nth-child(2) span {
+  background-position: -80px -70px;
+}
+.footer_tools .downland ul li:nth-child(3) span {
+  background-position: -40px -70px;
+}
+.footer_tools .copyright {
+  padding: 20px 0 ;
+}
+/*底部导航*/
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+}
+footer ul li {
+  float: left;
+  width: 20%;
+  background-color: #fff;
+}
+footer ul li img {
+  width: 57px;
+  margin: 0 auto;
+}

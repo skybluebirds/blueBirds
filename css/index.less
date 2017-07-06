@@ -1,0 +1,434 @@
+@import "./base.less";
+/*封装函数*/
+.bg_sprites(){
+  background-image: url("../images/jd-sprites.png");
+  background-size: 200px;
+}
+
+/*京东红色字体*/
+@jd_red:#c91523;
+
+.view{
+  width: 100%;
+  height: 100%;
+}
+
+/* 顶部搜索 */
+header{
+  width: 100%;
+  height: 40px;
+  background-color:rgba(201, 21, 35, 0);
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  padding: 5px 60px 5px 70px;
+  .left{
+    .bg_sprites();
+    background-position: 0 -110px;
+    width: 70px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-clip:裁切背景图片,裁切以外的部分,content-box为切除内容以外的部分,显示内容,padding-box为切除padding以外的部分,border-box为切除border以外的部分*/
+    background-clip: content-box;
+    /*background-origin:原点对齐方式,content-box为以内容左上角对齐,padding-box为以padding的左上角对齐,border-box为以边框左上角对齐*/
+    background-origin:content-box;
+    padding:10px 6px;
+  }
+  .search{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    input{
+      padding-left: 30px;
+    }
+    &::after {
+      .bg_sprites();
+      background-position: -60px -110px;
+      display: block;
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 6px;
+      left: 10px;
+    }
+  }
+  .right{
+    width: 60px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+  }
+
+}
+
+/* 轮播图 */
+.carousel{
+  overflow: hidden;
+  position: relative;
+  .carsousel_ul{
+    width: 1000%;
+    li{
+      float:left;
+      width: 10%;
+    }
+  }
+  .carsousel_index{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    li{
+      float: left;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      margin-left: 10px;
+    }
+    .action{
+      background-color:#fff;
+    }
+  }
+}
+
+
+/*导航*/
+.top-nav{
+  ul{
+    li{
+      float: left;
+      width: 25%;
+      font-size: 14px;
+      text-align: center;
+      a{
+        width: 100%;
+        height: 100%;
+          padding: 3px;
+        img{
+          width: 60%;
+          margin: 0 auto ;
+        }
+      }
+    }
+  }
+}
+
+/*划线*/
+.line{
+  height: 10px;
+  background-color: #f5f5f5;
+}
+
+/*掌上秒杀*/
+.hand_kill{
+  .kill_title{
+    width: 100%;
+    position: relative;
+    .kill_clock{
+      .bg_sprites();
+      background-position: -85px -110px;
+      display: inline-block;
+      width: 18px;
+      height: 22px;
+      margin-left: 10px;
+    }
+    >span{
+      color: @jd_red;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .time{
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      top:0px;
+      left: 50%;
+      font-weight: bold;
+      transform: translateX(-50%);
+      span{
+        float: left;
+        background-color: #3d3d3d;
+        color: #fff;
+        padding: 1px 2px;
+        margin-left: 2px;
+      }
+      >span:nth-child(3n){
+        background-color: inherit;
+        color: #3d3d3d;
+      }
+    }
+    .more{
+      display: inline-block;
+      float: right;
+    }
+  }
+  .kill_content{
+    ul{
+      li{
+        float: left;
+        width: 33.33%;
+        position: relative;
+        font-size: 14px;
+        text-align: center;
+        color: #666;
+        a{
+          padding: 5px;
+          img{
+            margin: 0 auto;
+          }
+          .hot_word{
+            padding: 5px 10px;
+            background-color: orange;
+            color: #fff;
+            font-weight: 900;
+            border-radius: 50%;          
+            position: absolute;
+            bottom: 40px;
+            right: 10px;
+          }
+          p{
+            color:@jd_red;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*618节日*/
+.festival{
+  .fs_title{
+    position: relative;
+    >ul{
+      position: absolute;
+      bottom: 5px;
+      li{
+        float: left;
+        width: 50%;
+        padding: 0px 3px;
+      }
+    }
+  }
+  .fs_content{
+    >ul{
+      li{
+        float: left;
+        width: 50%;
+      }
+      >li:nth-of-type(-n+3){
+        width: 33.33%;
+      }
+    }
+  }
+}
+
+/*广告*/
+.advert{
+  padding:5px;
+}
+
+/*特色超市*/
+.market{
+  >h4{
+    padding: 3px 5px;
+    color: @jd_red;
+  }
+  ul{
+    li{
+      float: left;
+      width: 50%;
+    }
+    >li:nth-of-type(4){
+      /*bug 切换不同大小的模板时会出现错位问题,解决办法是给对应的li表情设置一个清除浮动的设置*/
+      clear: both;
+    }
+  }
+}
+
+/*主题街*/
+.theme{
+  >h4{
+    padding: 3px 5px;
+    color: @jd_red;
+  }
+  .theme_content{
+    ul{
+      li{
+        float: left;
+        width: 25%;
+      }
+      >li:nth-of-type(-n+2){
+        width: 50%;
+      }
+      >li:nth-child(5){
+        clear: both;
+      }
+    }
+  }
+}
+
+/*品牌推荐*/
+.recommond{
+  >h4{
+    padding: 3px 5px;
+    color: @jd_red;
+  }
+  .rec_content{
+    ul{
+      li{
+        float: left;
+        width: 30%;
+      }
+      >li:first-child{
+        width: 40%;
+      }
+    }
+  }
+}
+
+/*猜你喜欢*/
+.guess{
+  .guess_title{
+    position: relative;
+    >h4{
+      padding: 3px 5px;
+      color: @jd_red;
+    }
+    .guess_more{
+      font-size: 14px;
+      position: absolute;
+      top: 2px;
+      right: 5px;
+      >img{
+        display: inline-block;
+        width: 18px;
+        vertical-align: top;
+      }
+      >a{
+        display: inline-block;
+        color: @jd_red;
+      }
+    }
+  }
+  .guess_content{
+    ul{
+      li{
+        float: left;
+        width: 50%;
+        color: #666;
+        padding: 5px;
+        font-size: 14px;
+        .price{
+          >span{
+            color: @jd_red;
+          }
+          >a{
+            display: inline-block;
+            border: 1px solid #666;
+            float: right;
+          }
+        }
+        >a{
+          padding: 0 5px;
+          img{
+            width: 80%;
+            margin: 0 auto;
+          }
+          >p{
+            overflow: hidden;
+            height: 34px;
+            border-bottom: 1px solid #666;                      
+          }
+        }
+      }
+    }
+  }
+}
+
+/*尾部工具栏*/
+.footer_tools{
+  background-color: #f3f5f7;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  padding-bottom:44px;
+  >div{
+    border-top: 1px solid #d6d6d6;
+  }
+  .footer_more{
+    >a{
+      padding: 10px 0;
+    }
+  }
+  .footer_director{
+    ul{
+      li{
+        float: left;
+        width: 25%;        
+        padding: 6px 0 ;
+        >a{
+          padding: 6px 0;
+          border-right: 1px solid #d6d6d6;
+        }
+      }
+    }
+  }
+  .downland{
+    ul{
+      li{
+        float: left;
+        width: 33.33%;
+        padding: 10px 0;
+        span{
+          .bg_sprites();
+          background-position: -120px -70px;
+          display: block;
+          width: 33px;
+          height: 33px;
+          margin: 0 auto;
+        }
+      }
+      li:nth-child(2){
+        span{
+          background-position: -80px -70px;
+        }
+      }
+      li:nth-child(3){
+        span{
+          background-position: -40px -70px;
+        }
+      }
+    }
+  }
+  .copyright{
+    padding: 20px 0 ;
+  }
+}
+/*底部导航*/
+footer{
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  ul{
+    li{
+      float:left;
+      width: 20%;
+      background-color: #fff; 
+      img{
+        width: 57px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
